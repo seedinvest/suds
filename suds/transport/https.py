@@ -59,7 +59,7 @@ class HttpAuthenticated(HttpTransport):
 
     def open(self, request):
         self.addcredentials(request)
-        return HttpTransport.open(self, request)
+        return HttpTransport.open(self, request, encode_chunked=False)
 
     def send(self, request):
         self.addcredentials(request)
