@@ -137,7 +137,7 @@ class HttpTransport(Transport):
         """
         tm = timeout or self.options.timeout
         url = self.u2opener()
-        return url.open(u2request, timeout=tm)
+        return url.open(u2request, timeout=tm, encode_chunked=False)
 
     def u2opener(self):
         """
